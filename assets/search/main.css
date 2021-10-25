@@ -1,0 +1,160 @@
+@import "css-generics";
+
+body {
+	height: 100vh;
+	background-color: black;
+	color: white;
+	display: grid;
+	font-family: "Open Sans";
+}
+input,
+button {
+	background: none;
+	border: 1px solid white;
+	color: white;
+	padding: var(--SIZE_XS);
+	cursor: pointer;
+	font-size: 1em;
+}
+
+input:disabled,
+button:disabled {
+	cursor: not-allowed;
+	background-color: gray;
+}
+
+button.danger {
+	background-color: #804848;
+}
+
+input:not(:disabled):hover,
+button:not(:disabled):hover {
+	background: #222121;
+}
+
+button:not(:disabled).danger:hover {
+	background-color: #9d5f5f;
+}
+
+a {
+	color: white;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+h1 {
+	padding: var(--SIZE_XS) var(--SIZE_XXL);
+}
+
+body > div {
+	display: grid;
+	grid-template-rows: auto 1fr auto;
+}
+
+.router {
+	display: grid;
+}
+
+.router > div {
+	place-self: center;
+}
+
+#footer {
+	place-self: center;
+	align-self: center;
+	justify-self: center;
+	font-size: 0.8em;
+	padding: var(--SIZE_LARGE);
+}
+
+#home {
+	display: grid;
+	grid-gap: var(--SIZE_XXL);
+}
+
+#home > div {
+	display: grid;
+	grid-gap: var(--SIZE_MEDIUM);
+}
+
+#search > img {
+	object-fit: scale-down;
+}
+
+#search {
+	display: grid;
+	place-items: center;
+	grid-gap: var(--SIZE_MEDIUM);
+}
+
+#search .products img {
+	display: grid;
+	place-items: center;
+	height: 200px;
+	width: 200px;
+	object-fit: scale-down;
+}
+
+#search .products img {
+	border: 1px solid #f0f8ff26;
+	background-color: #060605;
+	padding: 3px;
+}
+
+#search .products img:hover {
+	border: 1px solid #f0f8ff7a;
+}
+
+#search .product {
+	display: grid;
+	width: 200px;
+}
+
+#search .product > h3 {
+	place-self: center;
+	display: inline-block;
+	height: 30px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	width: 200px;
+}
+
+#search .alternative {
+	display: grid;
+	place-items: center;
+	grid-gap: var(--SIZE_XS);
+}
+
+.pagination-content {
+	grid-template-columns: 1fr 1fr 1fr;
+	display: grid;
+	grid-gap: 20px;
+}
+
+.pagination-controls {
+	display: flex;
+}
+
+.pagination-indicator {
+	flex-grow: 1;
+	align-self: center;
+	display: grid;
+	grid-auto-flow: column;
+	place-content: center;
+	place-items: center;
+	grid-gap: var(--SIZE_MEDIUM);
+}
+
+.paginator {
+	display: grid;
+	grid-gap: var(--SIZE_MEDIUM);
+}
+
+@media (max-width: 768px) {
+	.products {
+		grid-template-columns: initial;
+	}
+}

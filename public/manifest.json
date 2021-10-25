@@ -1,0 +1,35 @@
+{
+	"version": "1.0.0",
+	"description": "Reverse Image Product Search Engine",
+	"manifest_version": 2,
+	"name": "Image search from MercadoLivre.com on 1688.com and taobao.com",
+	"homepage_url": "https://thoughtsunificator.me",
+	"icons": {
+		"16": "resource/favicon-16x16.png",
+		"32": "resource/favicon-32x32.png",
+		"48": "resource/favicon-48x48.png",
+		"128": "resource/favicon-128x128.png",
+		"192": "resource/favicon-192x192.png"
+	},
+	"background": {
+		"scripts": ["background.js"]
+	},
+	"permissions": [
+		"*://*.1688.com/*",
+		"*://*.taobao.com/*",
+		"contextMenus",
+		"tabs"
+	],
+	"content_scripts": [
+		{
+			"matches": ["*://*.1688.com/*"],
+			"js": ["1688.js"],
+			"css": ["1688.css"]
+		},
+		{
+			"matches": ["*://*.taobao.com/*"],
+			"js": ["taobao.js"],
+			"css": ["taobao.css"]
+		}
+	]
+}
