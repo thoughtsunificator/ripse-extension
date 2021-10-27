@@ -1,4 +1,4 @@
-import fs from "fs"
+import { fileURLToPath } from 'url'
 import path from "path"
 import del from "rollup-plugin-delete"
 import postcss from "rollup-plugin-postcss"
@@ -12,8 +12,10 @@ import { babel } from '@rollup/plugin-babel'
 import globImport from 'rollup-plugin-glob-import'
 import configEnv from "@thoughtsunificator/rollup-plugin-config-env"
 import { obfuscator } from 'rollup-obfuscator';
+import { createConfig } from "@thoughtsunificator/config-env"
 
-import config from "./lib/config.js"
+const config = createConfig(".env.prod.json", "data/config.json")
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 export default [
 	{

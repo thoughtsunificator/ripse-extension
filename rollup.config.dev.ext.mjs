@@ -1,4 +1,4 @@
-import fs from "fs"
+import { fileURLToPath } from 'url'
 import path from "path"
 import postcss from "rollup-plugin-postcss"
 import postcssImport from "postcss-import"
@@ -10,8 +10,9 @@ import livereload from "rollup-plugin-livereload"
 import globImport from 'rollup-plugin-glob-import'
 import serve from "rollup-plugin-serve"
 import configEnv from "@thoughtsunificator/rollup-plugin-config-env"
+import config from "@thoughtsunificator/config-env"
 
-import config from "./lib/config.js"
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 export default [
 	{

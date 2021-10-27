@@ -8,25 +8,25 @@
 	"bugs": {
 		"url": "https://github.com/thoughtsunificator/ripse-extension/issues"
 	},
-	"author": "Romain Lebesle <oss@thoughtsunificator.me> (https://thoughtsunificator.me)",
+	"author": "Romain Lebesle <job@thoughtsunificator.me> (https://thoughtsunificator.me)",
 	"license": "MIT",
 	"scripts": {
 		"generate-docs": "jsdoc --configure .jsdoc.json --verbose",
-		"start": "rollup --config rollup.config.dev.js --watch",
-		"build": "cross-env NODE_ENV=production rollup --config rollup.config.prod.js && web-ext build --sourceDir dist/prod/public/ --filename ripse-extension.zip --artifactsDir build --overwrite-dest",
-		"start:ext": "concurrently \"rollup --config rollup.config.dev.ext.js --watch\" \"wait-on dist/dev-ext/public/manifest.json && web-ext run --sourceDir dist/dev-ext/public/ --args=--new-tab=https://www.mercadolivre.com.br/",
-		"start:ext:chromium": "concurrently \"rollup --config rollup.config.dev.ext.js --watch\" \"wait-on dist/dev-ext/public/manifest.json && web-ext run --target chromium --sourceDir dist/dev-ext/public/ --arg \"https://www.mercadolivre.com.br/\"",
+		"start": "rollup --config rollup.config.dev.mjs --watch",
+		"build": "cross-env NODE_ENV=production rollup --config rollup.config.prod.mjs && web-ext build --sourceDir dist/prod/public/ --filename ripse-extension.zip --artifactsDir build --overwrite-dest",
+		"start:ext": "concurrently \"rollup --config rollup.config.dev.ext.mjs --watch\" \"wait-on dist/dev-ext/public/manifest.json && web-ext run --sourceDir dist/dev-ext/public/ --args=--new-tab=https://www.mercadolivre.com.br/",
+		"start:ext:chromium": "concurrently \"rollup --config rollup.config.dev.ext.mjs --watch\" \"wait-on dist/dev-ext/public/manifest.json && web-ext run --target chromium --sourceDir dist/dev-ext/public/ --arg \"https://www.mercadolivre.com.br/\"",
 		"preversion": "node -e \"const m = require('./public/manifest.json'); m.version = process.env.npm_new_version; const fs = require('fs'); fs.accessSync('./public/manifest.json'); fs.writeFileSync('./public/manifest.json', JSON.stringify(m, null, '\t'), 'utf8')\" && git add public/manifest.json",
 		"test": "mocha"
 	},
-	"author": "Romain Lebesle <job@thoughtsunificator.me> (https://thoughtsunificator.me)",
 	"devDependencies": {
 		"@babel/core": "^7.15.5",
 		"@babel/plugin-proposal-class-properties": "^7.14.5",
 		"@rollup/plugin-alias": "^3.1.2",
 		"@rollup/plugin-babel": "^5.3.0",
 		"@rollup/plugin-node-resolve": "^13.0.0",
-		"@thoughtsunificator/rollup-plugin-config-env": "^1.0.7",
+		"@thoughtsunificator/config-env": "^1.0.3",
+		"@thoughtsunificator/rollup-plugin-config-env": "^1.0.11",
 		"concurrently": "^6.2.1",
 		"cross-env": "^7.0.3",
 		"docdash": "^1.2.0",
