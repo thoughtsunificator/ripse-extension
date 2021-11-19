@@ -11,7 +11,6 @@ import alias from "@rollup/plugin-alias"
 import { babel } from '@rollup/plugin-babel'
 import globImport from 'rollup-plugin-glob-import'
 import configEnv from "@thoughtsunificator/rollup-plugin-config-env"
-import { obfuscator } from 'rollup-obfuscator';
 import { createConfig } from "@thoughtsunificator/config-env"
 
 const config = createConfig(".env.prod.json", "data/config.json")
@@ -65,7 +64,6 @@ export default [
 			globImport(),
 			terser(),
 			babel({ babelHelpers: 'bundled' }),
-			obfuscator(),
 		]
 	},
 	{
