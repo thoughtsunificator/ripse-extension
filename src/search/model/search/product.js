@@ -21,11 +21,32 @@ export default data => ({
 		},
 		{
 			tagName: "div",
-			textContent: `🇨🇳 | ¥${data.currency.chinese}`
-		},
+			children: [
+				{
+					tagName: "span",
+					textContent: "🇨🇳 | "
+				},
+				{
+					tagName: "span",
+					style: "color: red",
+					textContent: `¥${data.currency.chinese}`
+				},
+			]
+			style: "border-bottom: 1px solid gray;"
+		}
 		{
 			tagName: "div",
-			innerHTML: `🇧🇷 | <span style="color: red">R$${data.currency.brazilian}</span>`,
+			children: [
+				{
+					tagName: "span",
+					textContent: "🇧🇷 | "
+				},
+				{
+					tagName: "span",
+					style: "color: red",
+					textContent: `R$${data.currency.brazilian}`
+				},
+			]
 			style: "border-bottom: 1px solid gray;"
 		}
 	]
