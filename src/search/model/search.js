@@ -15,7 +15,7 @@ export default data => ({
 					tagName: "span",
 					textContent: "for similar products:"
 				}
-			]
+			],
 			style: "color: #d9cece;"
 		},
 		{

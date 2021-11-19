@@ -31,9 +31,9 @@ export default data => ({
 					style: "color: red",
 					textContent: `¥${data.currency.chinese}`
 				},
-			]
+			],
 			style: "border-bottom: 1px solid gray;"
-		}
+		},
 		{
 			tagName: "div",
 			children: [
@@ -46,7 +46,7 @@ export default data => ({
 					style: "color: red",
 					textContent: `R$${data.currency.brazilian}`
 				},
-			]
+			],
 			style: "border-bottom: 1px solid gray;"
 		}
 	]
