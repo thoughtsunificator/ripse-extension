@@ -90,7 +90,6 @@ export default [
 			globImport(),
 			terser(),
 			babel({ babelHelpers: 'bundled' }),
-			obfuscator()
 		]
 	},
 	{
@@ -123,7 +122,6 @@ export default [
 			globImport(),
 			terser(),
 			babel({ babelHelpers: 'bundled' }),
-			obfuscator()
 		]
 	},
 	{
@@ -156,7 +154,6 @@ export default [
 			globImport(),
 			terser(),
 			babel({ babelHelpers: 'bundled' }),
-			obfuscator()
 		]
 	},
 ]
