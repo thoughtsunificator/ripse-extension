@@ -85,7 +85,7 @@ class SearchBinding extends Binding {
 			} else {
 				const startDate = new Date()
 				this.reconnectInterval = window.setInterval((function renderTimer() {
-					this.identifier.placeholder.innerHTML = `Connection failed: Reconnecting in <b>${5 - Math.round((new Date().getTime() - startDate.getTime()) / 1000)}s</b>`
+					this.identifier.placeholder.textContent = `Connection failed: Reconnecting in ${5 - Math.round((new Date().getTime() - startDate.getTime()) / 1000)}s`
 					return renderTimer.bind(this)
 				}).call(this), 1000)
 				this.reconnectTimeout = window.setTimeout(() => {

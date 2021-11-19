@@ -5,7 +5,17 @@ export default data => ({
 		{
 			tagName: "h2",
 			identifier: "title",
-			innerHTML: `Searching <u>${data.router.view.parameters.sourceName}</u> for similar products:`,
+			textContent: `Searching `,
+			children: [
+				{
+					tagName: "u",
+					textContent: `${data.router.view.parameters.sourceName} `
+				},
+				{
+					tagName: "span",
+					textContent: "for similar products:"
+				}
+			]
 			style: "color: #d9cece;"
 		},
 		{
