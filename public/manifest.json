@@ -1,8 +1,9 @@
 {
 	"version": "1.0.0",
-	"description": "Reverse Image Product Search Engine",
+	"description": "Image search from MercadoLivre.com on 1688.com and taobao.com",
 	"manifest_version": 2,
-	"name": "Image search from MercadoLivre.com on 1688.com and taobao.com",
+	"name": "Reverse Image Product Search Engine",
+	"short_name": "ripse",
 	"homepage_url": "https://thoughtsunificator.me",
 	"icons": {
 		"16": "resource/favicon-16x16.png",
