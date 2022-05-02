@@ -1,5 +1,5 @@
 {
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Image search from MercadoLivre.com on 1688.com and taobao.com",
 	"manifest_version": 2,
 	"name": "Reverse Image Product Search Engine",
@@ -13,7 +13,9 @@
 		"192": "resource/favicon-192x192.png"
 	},
 	"background": {
-		"scripts": ["background.js"]
+		"scripts": [
+			"background.js"
+		]
 	},
 	"permissions": [
 		"*://*.1688.com/*",
@@ -23,14 +25,26 @@
 	],
 	"content_scripts": [
 		{
-			"matches": ["*://*.1688.com/*"],
-			"js": ["1688.js"],
-			"css": ["1688.css"]
+			"matches": [
+				"*://*.1688.com/*"
+			],
+			"js": [
+				"1688.js"
+			],
+			"css": [
+				"1688.css"
+			]
 		},
 		{
-			"matches": ["*://*.taobao.com/*"],
-			"js": ["taobao.js"],
-			"css": ["taobao.css"]
+			"matches": [
+				"*://*.taobao.com/*"
+			],
+			"js": [
+				"taobao.js"
+			],
+			"css": [
+				"taobao.css"
+			]
 		}
 	]
 }
